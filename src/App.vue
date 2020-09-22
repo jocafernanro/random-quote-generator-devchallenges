@@ -1,32 +1,49 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+  <div
+    id="app"
+    class="mx-auto container flex flex-col justify-between min-h-screen"
+  >
+    <app-navbar></app-navbar>
     <router-view />
+    <app-footer></app-footer>
   </div>
 </template>
 
+<script>
+import AppNavbar from "@/components/layout/AppNavbar";
+import AppFooter from "@/components/layout/AppFooter";
+export default {
+  components: {
+    AppNavbar,
+    AppFooter
+  }
+};
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+:root {
+  --global-font-family: "Raleway", "Helvetica Neue", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  --global-font-size: 1rem;
+  --font-weight-regular: 500;
+  --font-weight-bold: 700;
+}
+html,
+body {
+  font-family: var(--global-font-family);
+  font-size: 16px;
+  font-weight: var(--font-weight-regular);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+.no-outline:focus,
+.no-outline:active {
+  outline: 0;
 }
 </style>

@@ -1,12 +1,15 @@
 <template>
-  <div class="home">
-    <div class="font-bold text-blue-500">Testing tailwind</div>
+  <div class="home max-w-xl mx-auto">
+    <app-quote-single></app-quote-single>
   </div>
 </template>
 
 <script>
+import AppQuoteSingle from "@/components/layout/AppQuoteSingle";
 export default {
   name: "Home",
-  components: {}
+  components: {
+    AppQuoteSingle
+  }
 };
 </script>
