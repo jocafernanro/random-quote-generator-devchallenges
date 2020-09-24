@@ -1,5 +1,5 @@
 <template>
-  <div id="nav" class="flex flex-row justify-end mt-4">
+  <div id="nav" class="flex flex-row justify-end mb-10">
     <button
       @click="launchRandomQuote"
       class="flex flex-row items-center no-outline"
@@ -11,12 +11,12 @@
 
 <script>
 import { mapActions } from "vuex";
-import { ROUTES } from "@/utils/CONSTANTS";
+import { ROUTES, STORES } from "@/utils/CONSTANTS";
 export default {
   name: "AppNavbar",
   methods: {
     ...mapActions({
-      setRandomQuote: "setRandomQuote"
+      setRandomQuote: STORES.SET_RANDOM_QUOTE
     }),
     async launchRandomQuote() {
       await this.setRandomQuote();

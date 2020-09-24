@@ -1,10 +1,12 @@
 <template>
   <div
     id="app"
-    class="mx-auto container flex flex-col justify-between min-h-screen"
+    class="mx-auto container flex flex-col justify-between min-h-screen p-6"
   >
     <app-navbar></app-navbar>
-    <router-view />
+    <transition name="fade">
+      <router-view />
+    </transition>
     <app-footer></app-footer>
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div class="mt-10">
     <quote :text="randomQuote.quote"></quote>
     <quote-author
       :author="randomQuote.author"
@@ -12,6 +12,8 @@
 import Quote from "@/components/quotes/Quote";
 import QuoteAuthor from "@/components/quotes/QuoteAuthor";
 import { mapActions, mapGetters } from "vuex";
+import { STORES } from "@/utils/CONSTANTS";
+
 export default {
   name: "AppQuoteSingle",
   components: {
@@ -20,12 +22,12 @@ export default {
   },
   computed: {
     ...mapGetters({
-      randomQuote: "getRandomQuote"
+      randomQuote: STORES.GET_RANDOM_QUOTE
     })
   },
   methods: {
     ...mapActions({
-      setRandomQuote: "setRandomQuote"
+      setRandomQuote: STORES.SET_RANDOM_QUOTE
     })
   },
   async mounted() {

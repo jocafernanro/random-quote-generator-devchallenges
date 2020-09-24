@@ -1,15 +1,18 @@
 <template>
   <div
-    class="flex flex-col pl-10 py-10 ml-10 mr-10 hover:bg-gray-700 hover:text-white cursor-pointer"
+    class="flex flex-row items-center justify-between pl-8 sm:pl-20 py-10 hover:bg-gray-900 hover:text-white cursor-pointer author-container"
     @click="goToAuthor"
   >
-    <span class="font-bold">{{ author }}</span>
-    <span class="text-xs text-gray-500">{{ genre }}</span>
+    <div class="flex flex-col">
+      <span class="font-bold">{{ author }}</span>
+      <span class="text-xs text-gray-500">{{ genre }}</span>
+    </div>
+    <i class="material-icons mr-10 hidden author-arrow">arrow_right_alt</i>
   </div>
 </template>
 
 <script>
-import { ROUTES } from "@/utils/CONSTANTS";
+import { ROUTES, STORES } from "@/utils/CONSTANTS";
 import { mapActions } from "vuex";
 
 export default {
@@ -20,7 +23,7 @@ export default {
   },
   methods: {
     ...mapActions({
-      setQuotesByAuthor: "setQuotesByAuthor"
+      setQuotesByAuthor: STORES.SET_QUOTES_BY_AUTHOR
     }),
     async goToAuthor() {
       await this.setQuotesByAuthor(this.author);
@@ -32,4 +35,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.author-container:hover .author-arrow {
+  display: block;
+}
+</style>
