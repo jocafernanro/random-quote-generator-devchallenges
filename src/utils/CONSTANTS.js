@@ -14,5 +14,7 @@ export const STORES = {
   GET_AUTHOR_QUOTES: "getAuthorQuotes",
   GET_AUTHOR: "getAuthor",
   SET_RANDOM_QUOTE: "setRandomQuote",
-  SET_QUOTES_BY_AUTHOR: "setQuotesByAuthor"
+  SET_QUOTES_BY_AUTHOR: "setQuotesByAuthor",
+  SET_IS_LOADING: "setIsLoading",
+  IS_LOADING: "isLoading"
 };
