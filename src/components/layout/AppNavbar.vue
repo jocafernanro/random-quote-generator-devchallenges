@@ -2,9 +2,9 @@
   <div id="nav" class="flex flex-row justify-end mb-10">
     <button
       @click="launchRandomQuote"
-      class="flex flex-row items-center no-outline"
+      class="flex flex-row items-center no-outline refresh-container"
     >
-      random <i class="material-icons text-base">autorenew</i>
+      random <i class="material-icons text-base refresh-rotate">autorenew</i>
     </button>
   </div>
 </template>
@@ -29,4 +29,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.refresh-container:hover .refresh-rotate {
+  animation: rotate-center 0.6s ease-in-out both;
+}
+</style>
